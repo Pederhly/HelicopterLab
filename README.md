@@ -1,3 +1,2 @@
 # HelicopterLab
-Group 55, helicopter lab\\
-Peder, Meisal og Henning
+Group 55: Peder, Meisal og Henning
