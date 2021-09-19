@@ -1,0 +1,5 @@
+09:29 - Task 1: Prøvde x_gain = 0.1, y_gain = 1 --> For lav gain til å kunne få liftoff.
+09:30 - Task 1: Økte til x_gain = 2 og y_gain = -6 for å kunne fly nogenlunde.
+09:36 - Task 2: Alle enkoderne har riktig positiv retning. Offset på elevation er på 0.43 radianer.
+09:42 - Task 2: Skal finne Vs,0. La til et konstantledd på elevation = -3 for å få høyere oppløsning på joysticken slik at vi kan mer nøyaktig bestemme Vs,0.
+09:53 - Task 2: Vanskelig å bestemme når pitch ikke er låst, men kom frem til Vs,0 = 6 ga elevation lik 0. Logfil: "Task 2 Vs0 log file"
