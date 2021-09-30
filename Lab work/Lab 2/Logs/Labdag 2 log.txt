@@ -1,0 +1,9 @@
+Tilhørende logger heter klokkeslett + "logg". (eks. "1008 logg" for første entry kl. 10:08.)
+
+10:08 - Vi kuker. Økte Q[pdot] fra 1 til 4. Veldig lite endring.
+10:17 - Økte Q[pdot] fra 4 til 50. Merkbart lavere pitch rate. Veldig treg endring.
+10:40 - Økte Q[p]=40. Satt Q[pdot]=1. Veldig hissig pitch control. Mye oversving, men stabilt.
+10:53 - Q[p]=Q[pdot]=1. Q[edot] = 10. Mye bedre elevation kontroll. Klarer nå å fly nesten maks opp og nesten lande. Fortsatt litt lav gain.
+11:20 - Q[p]=20. Q[pdot]=30. Q[edot]=20. Litt aggressiv pitch, men fungerte relativt bra. Elevation var veldig bra, men pitch dot jobbet litt mot pitch.
+11:45 - Doblet R[1](Vs) til 2. Resultatet ble at pådraget (spenningen til hver motor) ikke oversteg 5V(som er limiten til motorene). Resultatet var dermed som forventet, ettersom det samlede pådraget ikke ble like stort.
+11:49 - Reduserte R[2](V_d) fra 1 til 0.2. Reagerte merkbart raskere på endring i pitch, ettersom pådragsdifferansen på de to propellene kunne bli større.
