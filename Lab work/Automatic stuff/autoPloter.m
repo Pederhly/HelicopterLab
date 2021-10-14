@@ -1,7 +1,6 @@
-function [figHandle] = autoPloter(matFile,rows,endTime)
+function [figHandle] = autoPloter(file_struct,rows,endTime)
 %AUTOPLOTER Summary of this function goes here
 %   Detailed explanation goes here
-file_struct = load(matFile);
 var = file_struct.var;
 time_row = var(1,:);
 if exist('endTime', 'var')
