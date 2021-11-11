@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave2".
  *
- * Model version              : 11.11
+ * Model version              : 11.12
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Sep 23 13:44:04 2021
+ * C source code generated on : Thu Oct 21 19:17:10 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -45,8 +45,8 @@ P_heli_q8_oppgave2_T heli_q8_oppgave2_P = {
    *   '<Root>/F'
    *   '<S5>/F1'
    */
-  { 5.1567044103442064E-15, 6.8389843293326127, 11.805939178662458,
-    -1.1421427690886869E-15 },
+  { 1.0475699325356413E-15, 6.8389843293326278, 28.593904259202478,
+    2.7371693163945175E-16 },
 
   /* Variable: Joystick_gain_x
    * Referenced by: '<S6>/Joystick_gain_x'
@@ -63,10 +63,10 @@ P_heli_q8_oppgave2_T heli_q8_oppgave2_P = {
    *   '<Root>/K'
    *   '<S5>/K1'
    */
-  { 5.1567044103442056E-15, 6.8389843293326118, 2.3914685915440257E-15,
-    3.3858533284285697, 11.805939178662456, -1.1421427690886871E-15,
-    -8.0482370641764867E-16, -1.0000000000000016, -31.622776601683771,
-    2.2373904116649751E-15 },
+  { 1.0475699325356413E-15, 6.8389843293326278, -1.8947246018194553E-15,
+    3.3858533284285719, 28.593904259202478, 2.7371693163945175E-16,
+    -1.4809271237516291E-15, -1.0000000000000004, -14.142135623730947,
+    7.38719824283737E-16 },
 
   /* Variable: Vs_0
    * Referenced by: '<Root>/Constant'
@@ -209,14 +209,29 @@ P_heli_q8_oppgave2_T heli_q8_oppgave2_P = {
   -0.0015339807878856412,
 
   /* Computed Parameter: TransferFcn_A
-   * Referenced by: '<Root>/Transfer Fcn'
+   * Referenced by: '<S2>/Transfer Fcn'
    */
   -10.0,
 
   /* Computed Parameter: TransferFcn_C
-   * Referenced by: '<Root>/Transfer Fcn'
+   * Referenced by: '<S2>/Transfer Fcn'
    */
   10.0,
+
+  /* Computed Parameter: ElevationTransferFcn_A
+   * Referenced by: '<S3>/Elevation: Transfer Fcn'
+   */
+  -50.0,
+
+  /* Computed Parameter: ElevationTransferFcn_C
+   * Referenced by: '<S3>/Elevation: Transfer Fcn'
+   */
+  -2500.0,
+
+  /* Computed Parameter: ElevationTransferFcn_D
+   * Referenced by: '<S3>/Elevation: Transfer Fcn'
+   */
+  50.0,
 
   /* Expression: 0
    * Referenced by: '<Root>/Integrator'
@@ -439,20 +454,15 @@ P_heli_q8_oppgave2_T heli_q8_oppgave2_P = {
    */
   0.0,
 
-  /* Computed Parameter: ElevationTransferFcn_A
-   * Referenced by: '<S3>/Elevation: Transfer Fcn'
+  /* Computed Parameter: TransferFcn_A_a
+   * Referenced by: '<Root>/Transfer Fcn'
    */
-  -50.0,
+  -10.0,
 
-  /* Computed Parameter: ElevationTransferFcn_C
-   * Referenced by: '<S3>/Elevation: Transfer Fcn'
+  /* Computed Parameter: TransferFcn_C_k
+   * Referenced by: '<Root>/Transfer Fcn'
    */
-  -2500.0,
-
-  /* Computed Parameter: ElevationTransferFcn_D
-   * Referenced by: '<S3>/Elevation: Transfer Fcn'
-   */
-  50.0,
+  10.0,
 
   /* Expression: 5
    * Referenced by: '<S3>/Front motor: Saturation'

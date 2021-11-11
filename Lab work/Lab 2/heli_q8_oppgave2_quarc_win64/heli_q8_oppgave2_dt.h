@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave2".
  *
- * Model version              : 11.11
+ * Model version              : 11.12
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Sep 23 13:44:04 2021
+ * C source code generated on : Thu Oct 21 19:17:10 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -64,7 +64,7 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&heli_q8_oppgave2_B.TravelCounttorad), 0, 0, 31 }
+  { (char_T *)(&heli_q8_oppgave2_B.TravelCounttorad), 0, 0, 32 }
   ,
 
   { (char_T *)(&heli_q8_oppgave2_DW.HILInitialize_AIMinimums[0]), 0, 0, 68 },
@@ -96,7 +96,7 @@ static DataTypeTransition rtPTransitions[] = {
 
   { (char_T *)(&heli_q8_oppgave2_P.HILWriteAnalog_channels[0]), 7, 0, 2 },
 
-  { (char_T *)(&heli_q8_oppgave2_P.HILInitialize_OOTerminate), 0, 0, 104 },
+  { (char_T *)(&heli_q8_oppgave2_P.HILInitialize_OOTerminate), 0, 0, 106 },
 
   { (char_T *)(&heli_q8_oppgave2_P.HILInitialize_CKChannels[0]), 6, 0, 10 },
 

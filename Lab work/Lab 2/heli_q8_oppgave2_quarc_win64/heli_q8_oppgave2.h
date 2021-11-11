@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave2".
  *
- * Model version              : 11.11
+ * Model version              : 11.12
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Sep 23 13:44:04 2021
+ * C source code generated on : Thu Oct 21 19:17:10 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -879,7 +879,8 @@ typedef struct {
   real_T PitchCounttorad;              /* '<S3>/Pitch: Count to rad' */
   real_T PitchTransferFcn;             /* '<S3>/Pitch: Transfer Fcn' */
   real_T ElevationCounttorad;          /* '<S3>/Elevation: Count to rad' */
-  real_T TransferFcn;                  /* '<Root>/Transfer Fcn' */
+  real_T TransferFcn;                  /* '<S2>/Transfer Fcn' */
+  real_T ElevationTransferFcn;         /* '<S3>/Elevation: Transfer Fcn' */
   real_T Integrator[2];                /* '<Root>/Integrator' */
   real_T RateTransitionx;              /* '<S6>/Rate Transition: x' */
   real_T Joystick_gain_x;              /* '<S6>/Joystick_gain_x' */
@@ -893,7 +894,7 @@ typedef struct {
   real_T Frontgain;                    /* '<S1>/Front gain' */
   real_T Backgain;                     /* '<S1>/Back gain' */
   real_T Gain1[2];                     /* '<S5>/Gain1' */
-  real_T ElevationTransferFcn;         /* '<S3>/Elevation: Transfer Fcn' */
+  real_T elevationrate;                /* '<Root>/Transfer Fcn' */
   real_T FrontmotorSaturation;         /* '<S3>/Front motor: Saturation' */
   real_T BackmotorSaturation;          /* '<S3>/Back motor: Saturation' */
   real_T u_d[2];                       /* '<S5>/Sum2' */
@@ -984,10 +985,11 @@ typedef struct {
 typedef struct {
   real_T TravelTransferFcn_CSTATE;     /* '<S3>/Travel: Transfer Fcn' */
   real_T PitchTransferFcn_CSTATE;      /* '<S3>/Pitch: Transfer Fcn' */
-  real_T TransferFcn_CSTATE;           /* '<Root>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE;           /* '<S2>/Transfer Fcn' */
+  real_T ElevationTransferFcn_CSTATE;  /* '<S3>/Elevation: Transfer Fcn' */
   real_T Integrator_CSTATE[2];         /* '<Root>/Integrator' */
   real_T StateSpace_CSTATE[5];         /* '<S5>/State-Space' */
-  real_T ElevationTransferFcn_CSTATE;  /* '<S3>/Elevation: Transfer Fcn' */
+  real_T TransferFcn_CSTATE_b;         /* '<Root>/Transfer Fcn' */
   real_T Integrator_CSTATE_i[2];       /* '<S5>/Integrator' */
 } X_heli_q8_oppgave2_T;
 
@@ -995,10 +997,11 @@ typedef struct {
 typedef struct {
   real_T TravelTransferFcn_CSTATE;     /* '<S3>/Travel: Transfer Fcn' */
   real_T PitchTransferFcn_CSTATE;      /* '<S3>/Pitch: Transfer Fcn' */
-  real_T TransferFcn_CSTATE;           /* '<Root>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE;           /* '<S2>/Transfer Fcn' */
+  real_T ElevationTransferFcn_CSTATE;  /* '<S3>/Elevation: Transfer Fcn' */
   real_T Integrator_CSTATE[2];         /* '<Root>/Integrator' */
   real_T StateSpace_CSTATE[5];         /* '<S5>/State-Space' */
-  real_T ElevationTransferFcn_CSTATE;  /* '<S3>/Elevation: Transfer Fcn' */
+  real_T TransferFcn_CSTATE_b;         /* '<Root>/Transfer Fcn' */
   real_T Integrator_CSTATE_i[2];       /* '<S5>/Integrator' */
 } XDot_heli_q8_oppgave2_T;
 
@@ -1006,10 +1009,11 @@ typedef struct {
 typedef struct {
   boolean_T TravelTransferFcn_CSTATE;  /* '<S3>/Travel: Transfer Fcn' */
   boolean_T PitchTransferFcn_CSTATE;   /* '<S3>/Pitch: Transfer Fcn' */
-  boolean_T TransferFcn_CSTATE;        /* '<Root>/Transfer Fcn' */
+  boolean_T TransferFcn_CSTATE;        /* '<S2>/Transfer Fcn' */
+  boolean_T ElevationTransferFcn_CSTATE;/* '<S3>/Elevation: Transfer Fcn' */
   boolean_T Integrator_CSTATE[2];      /* '<Root>/Integrator' */
   boolean_T StateSpace_CSTATE[5];      /* '<S5>/State-Space' */
-  boolean_T ElevationTransferFcn_CSTATE;/* '<S3>/Elevation: Transfer Fcn' */
+  boolean_T TransferFcn_CSTATE_b;      /* '<Root>/Transfer Fcn' */
   boolean_T Integrator_CSTATE_i[2];    /* '<S5>/Integrator' */
 } XDis_heli_q8_oppgave2_T;
 
@@ -1149,11 +1153,20 @@ struct P_heli_q8_oppgave2_T_ {
                                         * Referenced by: '<S3>/Elevation: Count to rad'
                                         */
   real_T TransferFcn_A;                /* Computed Parameter: TransferFcn_A
-                                        * Referenced by: '<Root>/Transfer Fcn'
+                                        * Referenced by: '<S2>/Transfer Fcn'
                                         */
   real_T TransferFcn_C;                /* Computed Parameter: TransferFcn_C
-                                        * Referenced by: '<Root>/Transfer Fcn'
+                                        * Referenced by: '<S2>/Transfer Fcn'
                                         */
+  real_T ElevationTransferFcn_A;   /* Computed Parameter: ElevationTransferFcn_A
+                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
+                                    */
+  real_T ElevationTransferFcn_C;   /* Computed Parameter: ElevationTransferFcn_C
+                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
+                                    */
+  real_T ElevationTransferFcn_D;   /* Computed Parameter: ElevationTransferFcn_D
+                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
+                                    */
   real_T Integrator_IC;                /* Expression: 0
                                         * Referenced by: '<Root>/Integrator'
                                         */
@@ -1286,15 +1299,12 @@ struct P_heli_q8_oppgave2_T_ {
   real_T StateSpace_InitialCondition;  /* Expression: 0
                                         * Referenced by: '<S5>/State-Space'
                                         */
-  real_T ElevationTransferFcn_A;   /* Computed Parameter: ElevationTransferFcn_A
-                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
-                                    */
-  real_T ElevationTransferFcn_C;   /* Computed Parameter: ElevationTransferFcn_C
-                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
-                                    */
-  real_T ElevationTransferFcn_D;   /* Computed Parameter: ElevationTransferFcn_D
-                                    * Referenced by: '<S3>/Elevation: Transfer Fcn'
-                                    */
+  real_T TransferFcn_A_a;              /* Computed Parameter: TransferFcn_A_a
+                                        * Referenced by: '<Root>/Transfer Fcn'
+                                        */
+  real_T TransferFcn_C_k;              /* Computed Parameter: TransferFcn_C_k
+                                        * Referenced by: '<Root>/Transfer Fcn'
+                                        */
   real_T FrontmotorSaturation_UpperSat;/* Expression: 5
                                         * Referenced by: '<S3>/Front motor: Saturation'
                                         */
@@ -1531,7 +1541,7 @@ struct tag_RTM_heli_q8_oppgave2_T {
   boolean_T zCCacheNeedsReset;
   boolean_T derivCacheNeedsReset;
   boolean_T CTOutputIncnstWithState;
-  real_T odeF[1][13];
+  real_T odeF[1][14];
   ODE1_IntgData intgData;
   void *dwork;
 

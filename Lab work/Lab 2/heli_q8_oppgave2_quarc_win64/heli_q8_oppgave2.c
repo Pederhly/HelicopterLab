@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave2".
  *
- * Model version              : 11.11
+ * Model version              : 11.12
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Sep 23 13:44:04 2021
+ * C source code generated on : Thu Oct 21 19:17:10 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -124,7 +124,7 @@ static void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si )
   ODE1_IntgData *id = (ODE1_IntgData *)rtsiGetSolverData(si);
   real_T *f0 = id->f[0];
   int_T i;
-  int_T nXc = 13;
+  int_T nXc = 14;
   rtsiSetSimTimeStep(si,MINOR_TIME_STEP);
   rtsiSetdX(si, f0);
   heli_q8_oppgave2_derivatives();
@@ -260,15 +260,24 @@ void heli_q8_oppgave2_output0(void)    /* Sample time: [0.0s, 0.0s] */
 
   /* End of RateTransition: '<S6>/Rate Transition: x' */
 
-  /* TransferFcn: '<Root>/Transfer Fcn' */
+  /* TransferFcn: '<S2>/Transfer Fcn' */
   heli_q8_oppgave2_B.TransferFcn = 0.0;
   heli_q8_oppgave2_B.TransferFcn += heli_q8_oppgave2_P.TransferFcn_C *
     heli_q8_oppgave2_X.TransferFcn_CSTATE;
 
+  /* TransferFcn: '<S3>/Elevation: Transfer Fcn' */
+  heli_q8_oppgave2_B.ElevationTransferFcn = 0.0;
+  heli_q8_oppgave2_B.ElevationTransferFcn +=
+    heli_q8_oppgave2_P.ElevationTransferFcn_C *
+    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE;
+  heli_q8_oppgave2_B.ElevationTransferFcn +=
+    heli_q8_oppgave2_P.ElevationTransferFcn_D *
+    heli_q8_oppgave2_B.ElevationCounttorad;
+
   /* SignalConversion generated from: '<Root>/K' */
   rtb_StateSpace[0] = heli_q8_oppgave2_B.PitchCounttorad;
   rtb_StateSpace[1] = heli_q8_oppgave2_B.PitchTransferFcn;
-  rtb_StateSpace[2] = heli_q8_oppgave2_B.TransferFcn;
+  rtb_StateSpace[2] = heli_q8_oppgave2_B.ElevationTransferFcn;
 
   /* Integrator: '<Root>/Integrator' */
   heli_q8_oppgave2_B.Integrator[0] = heli_q8_oppgave2_X.Integrator_CSTATE[0];
@@ -560,14 +569,10 @@ void heli_q8_oppgave2_output0(void)    /* Sample time: [0.0s, 0.0s] */
     }
   }
 
-  /* TransferFcn: '<S3>/Elevation: Transfer Fcn' */
-  heli_q8_oppgave2_B.ElevationTransferFcn = 0.0;
-  heli_q8_oppgave2_B.ElevationTransferFcn +=
-    heli_q8_oppgave2_P.ElevationTransferFcn_C *
-    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE;
-  heli_q8_oppgave2_B.ElevationTransferFcn +=
-    heli_q8_oppgave2_P.ElevationTransferFcn_D *
-    heli_q8_oppgave2_B.ElevationCounttorad;
+  /* TransferFcn: '<Root>/Transfer Fcn' */
+  heli_q8_oppgave2_B.elevationrate = 0.0;
+  heli_q8_oppgave2_B.elevationrate += heli_q8_oppgave2_P.TransferFcn_C_k *
+    heli_q8_oppgave2_X.TransferFcn_CSTATE_b;
   if (rtmIsMajorTimeStep(heli_q8_oppgave2_M)) {
   }
 
@@ -666,7 +671,7 @@ void heli_q8_oppgave2_output0(void)    /* Sample time: [0.0s, 0.0s] */
   heli_q8_oppgave2_B.TmpSignalConversionAtIntegrat_p[0] =
     heli_q8_oppgave2_B.Switch - heli_q8_oppgave2_B.PitchCounttorad;
   heli_q8_oppgave2_B.TmpSignalConversionAtIntegrat_p[1] =
-    heli_q8_oppgave2_B.Switch1 - heli_q8_oppgave2_B.TransferFcn;
+    heli_q8_oppgave2_B.Switch1 - heli_q8_oppgave2_B.ElevationTransferFcn;
 }
 
 /* Model update function for TID0 */
@@ -731,11 +736,18 @@ void heli_q8_oppgave2_derivatives(void)
     heli_q8_oppgave2_X.PitchTransferFcn_CSTATE;
   _rtXdot->PitchTransferFcn_CSTATE += heli_q8_oppgave2_B.PitchCounttorad;
 
-  /* Derivatives for TransferFcn: '<Root>/Transfer Fcn' */
+  /* Derivatives for TransferFcn: '<S2>/Transfer Fcn' */
   _rtXdot->TransferFcn_CSTATE = 0.0;
   _rtXdot->TransferFcn_CSTATE += heli_q8_oppgave2_P.TransferFcn_A *
     heli_q8_oppgave2_X.TransferFcn_CSTATE;
   _rtXdot->TransferFcn_CSTATE += heli_q8_oppgave2_B.ElevationTransferFcn;
+
+  /* Derivatives for TransferFcn: '<S3>/Elevation: Transfer Fcn' */
+  _rtXdot->ElevationTransferFcn_CSTATE = 0.0;
+  _rtXdot->ElevationTransferFcn_CSTATE +=
+    heli_q8_oppgave2_P.ElevationTransferFcn_A *
+    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE;
+  _rtXdot->ElevationTransferFcn_CSTATE += heli_q8_oppgave2_B.ElevationCounttorad;
 
   /* Derivatives for Integrator: '<Root>/Integrator' */
   _rtXdot->Integrator_CSTATE[0] =
@@ -762,12 +774,11 @@ void heli_q8_oppgave2_derivatives(void)
 
   /* End of Derivatives for StateSpace: '<S5>/State-Space' */
 
-  /* Derivatives for TransferFcn: '<S3>/Elevation: Transfer Fcn' */
-  _rtXdot->ElevationTransferFcn_CSTATE = 0.0;
-  _rtXdot->ElevationTransferFcn_CSTATE +=
-    heli_q8_oppgave2_P.ElevationTransferFcn_A *
-    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE;
-  _rtXdot->ElevationTransferFcn_CSTATE += heli_q8_oppgave2_B.ElevationCounttorad;
+  /* Derivatives for TransferFcn: '<Root>/Transfer Fcn' */
+  _rtXdot->TransferFcn_CSTATE_b = 0.0;
+  _rtXdot->TransferFcn_CSTATE_b += heli_q8_oppgave2_P.TransferFcn_A_a *
+    heli_q8_oppgave2_X.TransferFcn_CSTATE_b;
+  _rtXdot->TransferFcn_CSTATE_b += heli_q8_oppgave2_B.ElevationTransferFcn;
 
   /* Derivatives for Integrator: '<S5>/Integrator' */
   _rtXdot->Integrator_CSTATE_i[0] =
@@ -1334,8 +1345,11 @@ void heli_q8_oppgave2_initialize(void)
     /* InitializeConditions for TransferFcn: '<S3>/Pitch: Transfer Fcn' */
     heli_q8_oppgave2_X.PitchTransferFcn_CSTATE = 0.0;
 
-    /* InitializeConditions for TransferFcn: '<Root>/Transfer Fcn' */
+    /* InitializeConditions for TransferFcn: '<S2>/Transfer Fcn' */
     heli_q8_oppgave2_X.TransferFcn_CSTATE = 0.0;
+
+    /* InitializeConditions for TransferFcn: '<S3>/Elevation: Transfer Fcn' */
+    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE = 0.0;
 
     /* InitializeConditions for Integrator: '<Root>/Integrator' */
     heli_q8_oppgave2_X.Integrator_CSTATE[0] = heli_q8_oppgave2_P.Integrator_IC;
@@ -1357,8 +1371,8 @@ void heli_q8_oppgave2_initialize(void)
 
     /* End of InitializeConditions for StateSpace: '<S5>/State-Space' */
 
-    /* InitializeConditions for TransferFcn: '<S3>/Elevation: Transfer Fcn' */
-    heli_q8_oppgave2_X.ElevationTransferFcn_CSTATE = 0.0;
+    /* InitializeConditions for TransferFcn: '<Root>/Transfer Fcn' */
+    heli_q8_oppgave2_X.TransferFcn_CSTATE_b = 0.0;
 
     /* InitializeConditions for Integrator: '<S5>/Integrator' */
     heli_q8_oppgave2_X.Integrator_CSTATE_i[0] =
@@ -1656,10 +1670,10 @@ RT_MODEL_heli_q8_oppgave2_T *heli_q8_oppgave2(void)
   heli_q8_oppgave2_M->Timing.stepSize2 = 0.01;
 
   /* External mode info */
-  heli_q8_oppgave2_M->Sizes.checksums[0] = (1669739183U);
-  heli_q8_oppgave2_M->Sizes.checksums[1] = (2014882227U);
-  heli_q8_oppgave2_M->Sizes.checksums[2] = (1296778569U);
-  heli_q8_oppgave2_M->Sizes.checksums[3] = (3704746269U);
+  heli_q8_oppgave2_M->Sizes.checksums[0] = (4019560079U);
+  heli_q8_oppgave2_M->Sizes.checksums[1] = (3111368625U);
+  heli_q8_oppgave2_M->Sizes.checksums[2] = (2780754435U);
+  heli_q8_oppgave2_M->Sizes.checksums[3] = (3360139361U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -1692,6 +1706,7 @@ RT_MODEL_heli_q8_oppgave2_T *heli_q8_oppgave2(void)
     heli_q8_oppgave2_B.PitchTransferFcn = 0.0;
     heli_q8_oppgave2_B.ElevationCounttorad = 0.0;
     heli_q8_oppgave2_B.TransferFcn = 0.0;
+    heli_q8_oppgave2_B.ElevationTransferFcn = 0.0;
     heli_q8_oppgave2_B.Integrator[0] = 0.0;
     heli_q8_oppgave2_B.Integrator[1] = 0.0;
     heli_q8_oppgave2_B.RateTransitionx = 0.0;
@@ -1708,7 +1723,7 @@ RT_MODEL_heli_q8_oppgave2_T *heli_q8_oppgave2(void)
     heli_q8_oppgave2_B.Backgain = 0.0;
     heli_q8_oppgave2_B.Gain1[0] = 0.0;
     heli_q8_oppgave2_B.Gain1[1] = 0.0;
-    heli_q8_oppgave2_B.ElevationTransferFcn = 0.0;
+    heli_q8_oppgave2_B.elevationrate = 0.0;
     heli_q8_oppgave2_B.FrontmotorSaturation = 0.0;
     heli_q8_oppgave2_B.BackmotorSaturation = 0.0;
     heli_q8_oppgave2_B.u_d[0] = 0.0;
@@ -1814,16 +1829,16 @@ RT_MODEL_heli_q8_oppgave2_T *heli_q8_oppgave2(void)
   }
 
   /* Initialize Sizes */
-  heli_q8_oppgave2_M->Sizes.numContStates = (13);/* Number of continuous states */
+  heli_q8_oppgave2_M->Sizes.numContStates = (14);/* Number of continuous states */
   heli_q8_oppgave2_M->Sizes.numPeriodicContStates = (0);
                                       /* Number of periodic continuous states */
   heli_q8_oppgave2_M->Sizes.numY = (0);/* Number of model outputs */
   heli_q8_oppgave2_M->Sizes.numU = (0);/* Number of model inputs */
   heli_q8_oppgave2_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   heli_q8_oppgave2_M->Sizes.numSampTimes = (3);/* Number of sample times */
-  heli_q8_oppgave2_M->Sizes.numBlocks = (76);/* Number of blocks */
-  heli_q8_oppgave2_M->Sizes.numBlockIO = (25);/* Number of block outputs */
-  heli_q8_oppgave2_M->Sizes.numBlockPrms = (257);/* Sum of parameter "widths" */
+  heli_q8_oppgave2_M->Sizes.numBlocks = (77);/* Number of blocks */
+  heli_q8_oppgave2_M->Sizes.numBlockIO = (26);/* Number of block outputs */
+  heli_q8_oppgave2_M->Sizes.numBlockPrms = (259);/* Sum of parameter "widths" */
   return heli_q8_oppgave2_M;
 }
 
