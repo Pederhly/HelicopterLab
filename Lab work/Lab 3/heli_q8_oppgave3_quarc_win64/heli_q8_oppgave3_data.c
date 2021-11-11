@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave3".
  *
- * Model version              : 11.22
+ * Model version              : 11.17
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Oct 14 12:14:59 2021
+ * C source code generated on : Tue Oct 12 14:04:56 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -24,75 +24,49 @@
 /* Block parameters (default storage) */
 P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   /* Variable: A_aug
-   * Referenced by: '<S9>/State-Space'
+   * Referenced by: '<S7>/State-Space'
    */
   { 0.0, 0.0, 0.0, -1.0, -0.0, 1.0, 0.0, 0.0, -0.0, -0.0, 0.0, 0.0, 0.0, -0.0,
     -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 
-  /* Variable: A_est
-   * Referenced by: '<S3>/A_est'
-   */
-  { 0.0, 0.0, 0.0, 0.0, 1.5360139276299762, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
-
   /* Variable: B_aug
-   * Referenced by: '<S9>/State-Space'
+   * Referenced by: '<S7>/State-Space'
    */
   { 0.0, 0.0, 1.606024179145487, 0.0, 0.0, 0.0, 9.3428571428571452, 0.0, 0.0,
     0.0 },
 
-  /* Variable: B_est
-   * Referenced by: '<S3>/B_est'
-   */
-  { 0.0, 0.0, 0.0, 1.606024179145487, 0.0, 0.0, 9.3428571428571452, 0.0, 0.0,
-    0.0 },
-
   /* Variable: C_aug
-   * Referenced by: '<S9>/Gain1'
+   * Referenced by: '<S7>/Gain1'
    */
   { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0 },
-
-  /* Variable: C_est
-   * Referenced by:
-   *   '<S3>/C_est'
-   *   '<S3>/Gain'
-   */
-  { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 },
 
   /* Variable: F_aug
    * Referenced by:
    *   '<Root>/F'
-   *   '<S9>/F1'
+   *   '<S7>/F1'
    */
   { 1.0475699325356413E-15, 6.8389843293326278, 28.593904259202478,
     2.7371693163945175E-16 },
 
   /* Variable: Joystick_gain_x
-   * Referenced by: '<S17>/Joystick_gain_x'
+   * Referenced by: '<S15>/Joystick_gain_x'
    */
   1.0,
 
   /* Variable: Joystick_gain_y
-   * Referenced by: '<S17>/Joystick_gain_y'
+   * Referenced by: '<S15>/Joystick_gain_y'
    */
   -1.0,
 
   /* Variable: K_aug
    * Referenced by:
-   *   '<S7>/K'
-   *   '<S9>/K1'
+   *   '<Root>/K'
+   *   '<S7>/K1'
    */
   { 1.0475699325356413E-15, 6.8389843293326278, -1.8947246018194553E-15,
     3.3858533284285719, 28.593904259202478, 2.7371693163945175E-16,
     -1.4809271237516291E-15, -1.0000000000000004, -14.142135623730947,
     7.38719824283737E-16 },
-
-  /* Variable: L
-   * Referenced by: '<S3>/L'
-   */
-  { 0.1, 0.0, 0.0, 0.0, 1.5360139276299762, 1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.9, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5 },
 
   /* Variable: Vs_0
    * Referenced by: '<Root>/Constant'
@@ -100,7 +74,7 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   6.0,
 
   /* Mask Parameter: HILWriteAnalog_channels
-   * Referenced by: '<S5>/HIL Write Analog'
+   * Referenced by: '<S4>/HIL Write Analog'
    */
   { 0U, 1U },
 
@@ -190,42 +164,42 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   0.0,
 
   /* Expression: -2*pi /4096
-   * Referenced by: '<S5>/Pitch: Count to rad'
+   * Referenced by: '<S4>/Pitch: Count to rad'
    */
   -0.0015339807878856412,
 
   /* Expression: 0
-   * Referenced by: '<S6>/Constant4'
+   * Referenced by: '<S5>/Constant4'
    */
   0.0,
 
   /* Expression: [ 0, 0, 1; 0, 1, 0; -1, 0, 0]
-   * Referenced by: '<S6>/Gain1'
+   * Referenced by: '<S5>/Gain1'
    */
   { 0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0 },
 
   /* Expression: [ 0, 0, 1; 0, 1, 0; -1, 0, 0]
-   * Referenced by: '<S6>/Gain2'
+   * Referenced by: '<S5>/Gain2'
    */
   { 0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0 },
 
   /* Expression: -2 * pi /4096
-   * Referenced by: '<S5>/Elevation: Count to rad'
+   * Referenced by: '<S4>/Elevation: Count to rad'
    */
   -0.0015339807878856412,
 
   /* Computed Parameter: PitchTransferFcn_A
-   * Referenced by: '<S5>/Pitch: Transfer Fcn'
+   * Referenced by: '<S4>/Pitch: Transfer Fcn'
    */
   -50.0,
 
   /* Computed Parameter: PitchTransferFcn_C
-   * Referenced by: '<S5>/Pitch: Transfer Fcn'
+   * Referenced by: '<S4>/Pitch: Transfer Fcn'
    */
   -2500.0,
 
   /* Computed Parameter: PitchTransferFcn_D
-   * Referenced by: '<S5>/Pitch: Transfer Fcn'
+   * Referenced by: '<S4>/Pitch: Transfer Fcn'
    */
   50.0,
 
@@ -240,290 +214,285 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   10.0,
 
   /* Expression: 2*pi/8192
-   * Referenced by: '<S5>/Travel: Count to rad'
+   * Referenced by: '<S4>/Travel: Count to rad'
    */
   0.00076699039394282058,
 
   /* Computed Parameter: TravelTransferFcn_A
-   * Referenced by: '<S5>/Travel: Transfer Fcn'
+   * Referenced by: '<S4>/Travel: Transfer Fcn'
    */
   -50.0,
 
   /* Computed Parameter: TravelTransferFcn_C
-   * Referenced by: '<S5>/Travel: Transfer Fcn'
+   * Referenced by: '<S4>/Travel: Transfer Fcn'
    */
   -2500.0,
 
   /* Computed Parameter: TravelTransferFcn_D
-   * Referenced by: '<S5>/Travel: Transfer Fcn'
+   * Referenced by: '<S4>/Travel: Transfer Fcn'
    */
   50.0,
 
   /* Expression: 0
-   * Referenced by: '<S3>/Integrator1'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S7>/Integrator'
+   * Referenced by: '<Root>/Integrator'
    */
   0.0,
 
   /* Expression: 25
-   * Referenced by: '<S8>/Step2'
+   * Referenced by: '<S6>/Step2'
    */
   25.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step2'
+   * Referenced by: '<S6>/Step2'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<S8>/Step2'
+   * Referenced by: '<S6>/Step2'
    */
   0.5,
 
   /* Expression: 35
-   * Referenced by: '<S8>/Step3'
+   * Referenced by: '<S6>/Step3'
    */
   35.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step3'
+   * Referenced by: '<S6>/Step3'
    */
   0.0,
 
   /* Expression: -0.5
-   * Referenced by: '<S8>/Step3'
+   * Referenced by: '<S6>/Step3'
    */
   -0.5,
 
   /* Expression: 40
-   * Referenced by: '<S8>/Step4'
+   * Referenced by: '<S6>/Step4'
    */
   40.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step4'
+   * Referenced by: '<S6>/Step4'
    */
   0.0,
 
   /* Expression: -0.7
-   * Referenced by: '<S8>/Step4'
+   * Referenced by: '<S6>/Step4'
    */
   -0.7,
 
   /* Expression: 45
-   * Referenced by: '<S8>/Step5'
+   * Referenced by: '<S6>/Step5'
    */
   45.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step5'
+   * Referenced by: '<S6>/Step5'
    */
   0.0,
 
   /* Expression: 0.7
-   * Referenced by: '<S8>/Step5'
+   * Referenced by: '<S6>/Step5'
    */
   0.7,
 
-  /* Expression: 0
+  /* Expression: 1
    * Referenced by: '<Root>/Constant1'
    */
-  0.0,
+  1.0,
 
   /* Expression: 0
-   * Referenced by: '<S17>/Rate Transition: x'
+   * Referenced by: '<S15>/Rate Transition: x'
    */
   0.0,
 
   /* Expression: -0.1
-   * Referenced by: '<S17>/Dead Zone: x'
+   * Referenced by: '<S15>/Dead Zone: x'
    */
   -0.1,
 
   /* Expression: 0.1
-   * Referenced by: '<S17>/Dead Zone: x'
+   * Referenced by: '<S15>/Dead Zone: x'
    */
   0.1,
 
   /* Expression: 10/9
-   * Referenced by: '<S17>/Gain: x'
+   * Referenced by: '<S15>/Gain: x'
    */
   1.1111111111111112,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Switch'
+   * Referenced by: '<S6>/Switch'
+   */
+  0.0,
+
+  /* Expression: eye(5)
+   * Referenced by: '<S7>/State-Space'
+   */
+  { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 },
+
+  /* Expression: 0
+   * Referenced by: '<S7>/State-Space'
    */
   0.0,
 
   /* Expression: 10
-   * Referenced by: '<S8>/Step'
+   * Referenced by: '<S6>/Step'
    */
   10.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step'
+   * Referenced by: '<S6>/Step'
    */
   0.0,
 
   /* Expression: 0.1
-   * Referenced by: '<S8>/Step'
+   * Referenced by: '<S6>/Step'
    */
   0.1,
 
   /* Expression: 15
-   * Referenced by: '<S8>/Step1'
+   * Referenced by: '<S6>/Step1'
    */
   15.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step1'
+   * Referenced by: '<S6>/Step1'
    */
   0.0,
 
   /* Expression: -0.2
-   * Referenced by: '<S8>/Step1'
+   * Referenced by: '<S6>/Step1'
    */
   -0.2,
 
   /* Expression: 20
-   * Referenced by: '<S8>/Step6'
+   * Referenced by: '<S6>/Step6'
    */
   20.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step6'
+   * Referenced by: '<S6>/Step6'
    */
   0.0,
 
   /* Expression: 0.1
-   * Referenced by: '<S8>/Step6'
+   * Referenced by: '<S6>/Step6'
    */
   0.1,
 
   /* Expression: 40
-   * Referenced by: '<S8>/Step7'
+   * Referenced by: '<S6>/Step7'
    */
   40.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step7'
+   * Referenced by: '<S6>/Step7'
    */
   0.0,
 
   /* Expression: 0.1
-   * Referenced by: '<S8>/Step7'
+   * Referenced by: '<S6>/Step7'
    */
   0.1,
 
   /* Expression: 45
-   * Referenced by: '<S8>/Step8'
+   * Referenced by: '<S6>/Step8'
    */
   45.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step8'
+   * Referenced by: '<S6>/Step8'
    */
   0.0,
 
   /* Expression: -0.1
-   * Referenced by: '<S8>/Step8'
+   * Referenced by: '<S6>/Step8'
    */
   -0.1,
 
   /* Expression: 0
-   * Referenced by: '<S17>/Rate Transition: y'
+   * Referenced by: '<S15>/Rate Transition: y'
    */
   0.0,
 
   /* Expression: -0.1
-   * Referenced by: '<S17>/Dead Zone: y'
+   * Referenced by: '<S15>/Dead Zone: y'
    */
   -0.1,
 
   /* Expression: 0.1
-   * Referenced by: '<S17>/Dead Zone: y'
+   * Referenced by: '<S15>/Dead Zone: y'
    */
   0.1,
 
   /* Expression: 10/9
-   * Referenced by: '<S17>/Gain: y'
+   * Referenced by: '<S15>/Gain: y'
    */
   1.1111111111111112,
 
   /* Expression: -1
-   * Referenced by: '<S8>/Gain2'
+   * Referenced by: '<S6>/Gain2'
    */
   -1.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Switch1'
+   * Referenced by: '<S6>/Switch1'
    */
   0.0,
-
-  /* Expression: 0.5
-   * Referenced by: '<S1>/Front gain'
-   */
-  0.5,
 
   /* Expression: 0.5
    * Referenced by: '<S1>/Back gain'
    */
   0.5,
 
-  /* Expression: eye(5)
-   * Referenced by: '<S9>/State-Space'
+  /* Expression: 0.5
+   * Referenced by: '<S1>/Front gain'
    */
-  { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 },
+  0.5,
 
   /* Expression: 0
-   * Referenced by: '<S9>/State-Space'
+   * Referenced by: '<S7>/Integrator'
    */
   0.0,
 
   /* Computed Parameter: ElevationTransferFcn_A
-   * Referenced by: '<S5>/Elevation: Transfer Fcn'
+   * Referenced by: '<S4>/Elevation: Transfer Fcn'
    */
   -50.0,
 
   /* Computed Parameter: ElevationTransferFcn_C
-   * Referenced by: '<S5>/Elevation: Transfer Fcn'
+   * Referenced by: '<S4>/Elevation: Transfer Fcn'
    */
   -2500.0,
 
   /* Computed Parameter: ElevationTransferFcn_D
-   * Referenced by: '<S5>/Elevation: Transfer Fcn'
+   * Referenced by: '<S4>/Elevation: Transfer Fcn'
    */
   50.0,
 
   /* Expression: 5
-   * Referenced by: '<S5>/Front motor: Saturation'
+   * Referenced by: '<S4>/Front motor: Saturation'
    */
   5.0,
 
   /* Expression: -5
-   * Referenced by: '<S5>/Front motor: Saturation'
+   * Referenced by: '<S4>/Front motor: Saturation'
    */
   -5.0,
 
   /* Expression: 5
-   * Referenced by: '<S5>/Back motor: Saturation'
+   * Referenced by: '<S4>/Back motor: Saturation'
    */
   5.0,
 
   /* Expression: -5
-   * Referenced by: '<S5>/Back motor: Saturation'
+   * Referenced by: '<S4>/Back motor: Saturation'
    */
   -5.0,
-
-  /* Expression: 0
-   * Referenced by: '<S9>/Integrator'
-   */
-  0.0,
 
   /* Computed Parameter: HILInitialize_CKChannels
    * Referenced by: '<Root>/HIL Initialize'
@@ -561,52 +530,52 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   1,
 
   /* Computed Parameter: HILReadEncoderTimebase_Clock
-   * Referenced by: '<S5>/HIL Read Encoder Timebase'
+   * Referenced by: '<S4>/HIL Read Encoder Timebase'
    */
   0,
 
   /* Computed Parameter: StreamCall2_SendBufferSize
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   8000,
 
   /* Computed Parameter: StreamCall2_ReceiveBufferSize
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   8000,
 
   /* Computed Parameter: UnitDelay_InitialCondition
-   * Referenced by: '<S10>/Unit Delay'
-   */
-  0.0F,
-
-  /* Computed Parameter: UnitDelay_InitialCondition_i
-   * Referenced by: '<S11>/Unit Delay'
-   */
-  0.0F,
-
-  /* Computed Parameter: UnitDelay_InitialCondition_g
-   * Referenced by: '<S12>/Unit Delay'
-   */
-  0.0F,
-
-  /* Computed Parameter: UnitDelay_InitialCondition_k
-   * Referenced by: '<S13>/Unit Delay'
-   */
-  0.0F,
-
-  /* Computed Parameter: UnitDelay_InitialCondition_e
-   * Referenced by: '<S14>/Unit Delay'
+   * Referenced by: '<S8>/Unit Delay'
    */
   0.0F,
 
   /* Computed Parameter: UnitDelay_InitialCondition_o
-   * Referenced by: '<S15>/Unit Delay'
+   * Referenced by: '<S9>/Unit Delay'
+   */
+  0.0F,
+
+  /* Computed Parameter: UnitDelay_InitialCondition_i
+   * Referenced by: '<S10>/Unit Delay'
+   */
+  0.0F,
+
+  /* Computed Parameter: UnitDelay_InitialCondition_g
+   * Referenced by: '<S11>/Unit Delay'
+   */
+  0.0F,
+
+  /* Computed Parameter: UnitDelay_InitialCondition_k
+   * Referenced by: '<S12>/Unit Delay'
+   */
+  0.0F,
+
+  /* Computed Parameter: UnitDelay_InitialCondition_kh
+   * Referenced by: '<S13>/Unit Delay'
    */
   0.0F,
 
   /* Computed Parameter: StreamFormattedRead_MaxUnits
-   * Referenced by: '<S16>/Stream Formatted Read'
+   * Referenced by: '<S14>/Stream Formatted Read'
    */
   80U,
 
@@ -636,22 +605,22 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   { 0U, 1U, 2U, 3U, 4U, 5U, 6U, 7U },
 
   /* Computed Parameter: HILReadEncoderTimebase_Channels
-   * Referenced by: '<S5>/HIL Read Encoder Timebase'
+   * Referenced by: '<S4>/HIL Read Encoder Timebase'
    */
   { 0U, 1U, 2U },
 
   /* Computed Parameter: HILReadEncoderTimebase_SamplesI
-   * Referenced by: '<S5>/HIL Read Encoder Timebase'
+   * Referenced by: '<S4>/HIL Read Encoder Timebase'
    */
   500U,
 
   /* Computed Parameter: StreamFormattedRead1_MaxUnits
-   * Referenced by: '<S6>/Stream Formatted Read1'
+   * Referenced by: '<S5>/Stream Formatted Read1'
    */
   80U,
 
   /* Computed Parameter: GameController_BufferSize
-   * Referenced by: '<S17>/Game Controller'
+   * Referenced by: '<S15>/Game Controller'
    */
   12U,
 
@@ -831,42 +800,42 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
   1,
 
   /* Computed Parameter: HILReadEncoderTimebase_Active
-   * Referenced by: '<S5>/HIL Read Encoder Timebase'
+   * Referenced by: '<S4>/HIL Read Encoder Timebase'
    */
   1,
 
   /* Computed Parameter: StreamCall2_NonBlocking
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   1,
 
   /* Computed Parameter: StreamCall2_Active
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   0,
 
   /* Computed Parameter: HILWriteAnalog_Active
-   * Referenced by: '<S5>/HIL Write Analog'
+   * Referenced by: '<S4>/HIL Write Analog'
    */
   0,
 
   /* Computed Parameter: GameController_AutoCenter
-   * Referenced by: '<S17>/Game Controller'
+   * Referenced by: '<S15>/Game Controller'
    */
   0,
 
   /* Computed Parameter: GameController_Enabled
-   * Referenced by: '<S17>/Game Controller'
+   * Referenced by: '<S15>/Game Controller'
    */
   1,
 
   /* Computed Parameter: HILReadEncoderTimebase_Overflow
-   * Referenced by: '<S5>/HIL Read Encoder Timebase'
+   * Referenced by: '<S4>/HIL Read Encoder Timebase'
    */
   1U,
 
   /* Expression: value
-   * Referenced by: '<S6>/String Constant1'
+   * Referenced by: '<S5>/String Constant1'
    */
   { 115U, 101U, 114U, 105U, 97U, 108U, 58U, 47U, 47U, 73U, 77U, 85U, 58U, 52U,
     63U, 98U, 97U, 117U, 100U, 61U, 49U, 49U, 53U, 50U, 48U, 48U, 44U, 119U,
@@ -885,17 +854,17 @@ P_heli_q8_oppgave3_T heli_q8_oppgave3_P = {
     0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U },
 
   /* Expression: uri_argument
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   0U,
 
   /* Computed Parameter: StreamCall2_Endian
-   * Referenced by: '<S6>/Stream Call2'
+   * Referenced by: '<S5>/Stream Call2'
    */
   1U,
 
   /* Computed Parameter: GameController_ControllerNumber
-   * Referenced by: '<S17>/Game Controller'
+   * Referenced by: '<S15>/Game Controller'
    */
   1U
 };

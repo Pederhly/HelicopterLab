@@ -7,9 +7,9 @@
  *
  * Code generation for model "heli_q8_oppgave3".
  *
- * Model version              : 11.22
+ * Model version              : 11.17
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Thu Oct 14 12:14:59 2021
+ * C source code generated on : Tue Oct 12 14:04:56 2021
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -80,13 +80,15 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&heli_q8_oppgave3_B.PitchCounttorad), 0, 0, 60 },
+  { (char_T *)(&heli_q8_oppgave3_B.PitchCounttorad), 0, 0, 46 },
 
   { (char_T *)(&heli_q8_oppgave3_B.StreamFormattedRead1_o2), 1, 0, 12 },
 
+  { (char_T *)(&heli_q8_oppgave3_B.StreamFormattedRead1_o8), 6, 0, 2 },
+
   { (char_T *)(&heli_q8_oppgave3_B.StreamCall2_o2), 3, 0, 1 },
 
-  { (char_T *)(&heli_q8_oppgave3_B.StreamFormattedRead1_o10), 8, 0, 8 }
+  { (char_T *)(&heli_q8_oppgave3_B.StreamFormattedRead1_o10), 8, 0, 9 }
   ,
 
   { (char_T *)(&heli_q8_oppgave3_DW.HILInitialize_AIMinimums[0]), 0, 0, 68 },
@@ -100,7 +102,7 @@ static DataTypeTransition rtBTransitions[] = {
   { (char_T *)(&heli_q8_oppgave3_DW.HILReadEncoderTimebase_Task), 24, 0, 1 },
 
   { (char_T *)(&heli_q8_oppgave3_DW.Anglesencodervseuler_PWORK.LoggedData[0]),
-    11, 0, 50 },
+    11, 0, 63 },
 
   { (char_T *)(&heli_q8_oppgave3_DW.UnitDelay_DSTATE), 1, 0, 6 },
 
@@ -117,17 +119,17 @@ static DataTypeTransition rtBTransitions[] = {
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  16U,
+  17U,
   rtBTransitions
 };
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&heli_q8_oppgave3_P.A_aug[0]), 0, 0, 147 },
+  { (char_T *)(&heli_q8_oppgave3_P.A_aug[0]), 0, 0, 62 },
 
   { (char_T *)(&heli_q8_oppgave3_P.HILWriteAnalog_channels[0]), 7, 0, 2 },
 
-  { (char_T *)(&heli_q8_oppgave3_P.HILInitialize_OOTerminate), 0, 0, 124 },
+  { (char_T *)(&heli_q8_oppgave3_P.HILInitialize_OOTerminate), 0, 0, 123 },
 
   { (char_T *)(&heli_q8_oppgave3_P.HILInitialize_CKChannels[0]), 6, 0, 12 },
 
